@@ -1,23 +1,16 @@
 const express = require("express")
 const env = require("./config/env")
 const app = express()
-const mysql   = require('mysql');
+const bd = require("./config/db")
 
-
-const connection = mysql.createConnection({
-  host     : '127.0.0.1',
-  user     : 'root',
-  password : '',
-  database : "students"
-});
  
-connection.connect(function(err) {
+bd.connect(function(err) {
   if (err) {
     console.error('error connecting: ' + err.stack);
     return;
   }
  
-  console.log('connected as id ' + connection.threadId);
+  console.log('connected as id ' + bd.threadId);
 });
 
 
