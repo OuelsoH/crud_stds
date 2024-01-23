@@ -1,5 +1,5 @@
 const path = require("path")
-require("dotenv").config({path:path.resolve("../.env")})
+require("dotenv").config({path:path.resolve("./.env")})
 
 const env = {
     port:process.env.PORT,
@@ -10,5 +10,6 @@ const env = {
     db_name:process.env.DB_NAME
 
 }
+console.log(process.env.DB_USER)
 
 module.exports = env
