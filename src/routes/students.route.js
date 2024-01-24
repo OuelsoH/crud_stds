@@ -1,5 +1,5 @@
 const express = require('express');
-const { getAllStudents } = require('../controllers/students.controller');
+const { getAllStudents, getStudentById } = require('../controllers/students.controller');
  const router = express.Router()
 
 
@@ -13,6 +13,7 @@ const { getAllStudents } = require('../controllers/students.controller');
   //   res.send("not found")
   // })
   router.get("/", getAllStudents);
+  router.get("/:id", getStudentById)
   // define the about route
   router.get('/students', function(req, res) {
     res.send('Get All Students');
